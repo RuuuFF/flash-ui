@@ -1,6 +1,6 @@
 /* Load screen animations */
 .load-wraper.loaded .load-screen {
-  transition: transform 1s ease-in-out 1s;
+  transition: transform 2s ease-in-out 3.4s;
 }
 
 .load-wraper.loaded .load-screen.left {
@@ -12,7 +12,7 @@
 }
 
 .load-wraper.loaded .load-screen svg {
-  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out 2.4s;
 }
 
 .load-wraper.loaded .load-screen.left svg {
@@ -21,6 +21,56 @@
 
 .load-wraper.loaded .load-screen.right svg {
   transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.anm-main {
+  stroke-dasharray: 923;
+  stroke-dashoffset: 923;
+  fill: transparent;
+}
+
+.load-wraper.loaded .anm-main {
+  animation: svg-animation 2s ease-in-out forwards,
+    svg-fill-yellow1 0.4s linear 2s forwards;
+}
+
+.anm-circle1 {
+  stroke-dasharray: 434;
+  stroke-dashoffset: 434;
+}
+
+.load-wraper.loaded .anm-circle1 {
+  animation: svg-animation 1s ease-in-out forwards;
+}
+
+.anm-circle2 {
+  stroke-dasharray: 971;
+  stroke-dashoffset: 971;
+  fill: transparent;
+}
+
+.load-wraper.loaded .anm-circle2 {
+  animation: svg-animation 2s ease-in-out forwards,
+    svg-fill-yellow2 0.4s linear 2s forwards;
+}
+
+@keyframes svg-animation {
+  to {
+    stroke-dashoffset: 0;
+    stroke-width: 2;
+  }
+}
+
+@keyframes svg-fill-yellow1 {
+  to {
+    fill: #ffb905;
+  }
+}
+
+@keyframes svg-fill-yellow2 {
+  to {
+    fill: #cbb700;
+  }
 }
 
 /* Circle behind the flash */
