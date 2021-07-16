@@ -9,22 +9,28 @@
 :root {
   font-size: 62.5%;
 
-  --white: #D5D8BC;
-  --white-dark: #A8A8A8;
-  --white-light: #CDCDCD;
+  --white: #d5d8bc;
+  --white-dark: #a8a8a8;
+  --white-light: #cdcdcd;
 
-  --yellow: #D7C206;
-  --yellow-2: #E1BD00;
-  --yellow-3: #887A00;
+  --yellow: #d7c206;
+  --yellow-2: #e1bd00;
+  --yellow-3: #887a00;
 
   --black: #000;
+  --black-2: #0d0c05;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   height: 100vh;
-  padding-top: 8.0rem;
-  background: linear-gradient(287.47deg, rgba(221, 30, 30, 0.3) 11.63%, rgba(0, 0, 0, 0) 56.42%), linear-gradient(97.47deg, #010101 7.75%, rgba(1, 1, 1) 72.14%) no-repeat;
+  padding-top: 8rem;
+  background: linear-gradient(
+      287.47deg,
+      rgba(221, 30, 30, 0.3) 11.63%,
+      rgba(0, 0, 0, 0) 56.42%
+    ),
+    linear-gradient(97.47deg, #010101 7.75%, rgba(1, 1, 1) 72.14%) no-repeat;
 }
 
 h1 {
@@ -75,7 +81,7 @@ ul {
   top: 0;
   left: 0;
   width: 100%;
-  height: 8.0rem;
+  height: 8rem;
 }
 
 #header .container {
@@ -108,7 +114,7 @@ ul {
 }
 
 #header .container nav ul li a::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0%;
   bottom: 2px;
@@ -154,12 +160,17 @@ h1.title::before {
   bottom: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(to right, #000 0%, var(--yellow) 30%, var(--yellow) 100%);
+  background: linear-gradient(
+    to right,
+    #000 0%,
+    var(--yellow) 30%,
+    var(--yellow) 100%
+  );
 }
 
 .subtitle {
   display: block;
-  margin: 2.0rem 0 3.5rem 0;
+  margin: 2rem 0 3.5rem 0;
 }
 
 .text {
@@ -178,6 +189,7 @@ h1.title::before {
 .buttons a {
   display: inline-block;
   border-radius: 2px;
+  position: relative;
 }
 
 .buttons li:first-child a {
@@ -191,12 +203,30 @@ h1.title::before {
   color: yellow;
 }
 
+.buttons li:first-child a::before {
+  content: "";
+  background-color: rgba(199, 199, 62, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.2);
+  z-index: -1;
+  transition: 0.2s ease;
+}
+
+.buttons li:first-child a:hover::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
 .buttons li:last-child a {
   filter: drop-shadow(0px 0px 15px rgba(202, 183, 17, 0.25));
   color: var(--black);
-  background: linear-gradient(90.13deg, #E7D323 -4.65%, #E7B400 116.61%);
+  background: linear-gradient(90.13deg, #e7d323 -4.65%, #e7b400 116.61%);
   padding: 0.95rem 2.4rem;
-  position: relative;
   transition: color 0.6s ease;
 }
 
@@ -207,7 +237,7 @@ h1.title::before {
 
 .buttons li:last-child a::before,
 .buttons li:last-child a::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   width: 100%;
@@ -282,15 +312,66 @@ main section:first-child div:last-child {
 .image-container .images svg {
   width: calc(464px - 10%);
   height: calc(628px - 10%);
-  top: 43%;
+  top: calc(50% - 40px);
   z-index: -1;
 }
 
-
 .image-container .images img {
-  max-width: 361px;
-  max-height: 471px;
+  max-width: 461px;
+  max-height: 671px;
   top: 50%;
   z-index: 1;
   filter: drop-shadow(0px 0px 80px rgba(202, 183, 17, 0.5));
+}
+
+.support-element {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.load-wraper {
+  position: relative;
+  width: 100%;
+}
+
+.load-screen {
+  background-color: var(--black-2);
+  width: 50%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+
+.load-screen.left {
+  left: 0;
+}
+
+.load-screen.right {
+  right: 0;
+}
+
+.load-screen .load-image-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.load-screen svg {
+  position: absolute;
+  top: 50%;
+  transform-origin: center;
+}
+
+.load-screen.left svg {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.load-screen.right svg {
+  left: 0;
+  transform: translate(-50%, -50%);
 }

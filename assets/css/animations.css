@@ -1,3 +1,46 @@
+/* Load screen animations */
+.load-wraper.loaded .load-screen {
+  transition: transform 1s ease-in-out 1s;
+}
+
+.load-wraper.loaded .load-screen.left {
+  transform: translateX(-101%);
+}
+
+.load-wraper.loaded .load-screen.right {
+  transform: translateX(101%);
+}
+
+.load-wraper.loaded .load-screen svg {
+  transition: transform 1s ease-in-out;
+}
+
+.load-wraper.loaded .load-screen.left svg {
+  transform: translate(50%, -50%) rotate(90deg);
+}
+
+.load-wraper.loaded .load-screen.right svg {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* Circle behind the flash */
+.image-container .images svg circle {
+  animation: rotate 1.5s linear infinite;
+  transform-origin: center center;
+  transform-box: fill-box;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Flash pump effect */
 .image-container .images img.flash {
   animation: pump 1.5s linear infinite;
 }
@@ -33,21 +76,5 @@
 
   100% {
     filter: drop-shadow(0px 0px 80px rgba(202, 183, 17, 0.5));
-  }
-}
-
-.image-container .images svg circle {
-  animation: rotate 1.5s linear infinite;
-  transform-origin: center center;
-  transform-box: fill-box;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(360deg);
   }
 }
