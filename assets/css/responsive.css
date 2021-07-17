@@ -78,4 +78,9 @@
     max-width: calc(461px - 35%);
     max-height: calc(671px - 35%);
   }
+
+  .load-screen svg {
+    width: calc(199px - 15%);
+    height: calc(269.43px - 15%);
+  }
 }
