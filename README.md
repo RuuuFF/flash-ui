@@ -1,5 +1,5 @@
 # ⚙️ Projeto
-Realizei a codificação da UI se guindo as diretrizes do protótipo, além de trabalhar em equipe com o designer para criação das animações e interações. 
+Realizei a codificação da UI se guindo as diretrizes do protótipo (Figma), além de trabalhar em equipe com o designer para criação das animações e interações. 
 
 # 🖼 Protótipo
 <a href="https://www.figma.com/file/b1P3HAnsUnRARIFYQnCDcG/the-flash?node-id=0%3A1">The Flash</a>, por <a href="https://dribbble.com/pedromurilo">Pedro Murilo</a>.
